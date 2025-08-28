@@ -1,12 +1,14 @@
 class Game {
-  static words = ['apple', 'banana', 'carrot'];
+  static words = ['apple', 'banana', 'orange', 'pear'];
 
   constructor() {
-    this.current_words = Game.words;
+    this.word = Game.getRandomWord();
   }
 
-  getWords() {
-    return this.current_words;
+  static getRandomWord() {
+    if (Game.words.length === 0) return undefined;
+    const wordIndex = Math.floor(Math.random() * Game.words.length);
+    return Game.words.splice(wordIndex, 1)[0];
   }
 
   /* The game must select a random word from a predefined list of words
@@ -36,10 +38,9 @@ class Game {
 // lets confirm we can create an instance of a game
 //  we test this by verifying the variable that references it is not null
 
-let myGame = new Game(words);
-let yourGame = new Game(words);
+console.log(Game.getRandomWord());
+console.log(Game.getRandomWord());
+console.log(Game.getRandomWord());
+console.log(Game.getRandomWord());
+console.log(Game.getRandomWord());
 
-if(myGame && yourGame) {
-  alert(myGame.getWords())
-  alert(yourGame.getWords())
-}
