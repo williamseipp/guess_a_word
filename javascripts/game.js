@@ -2,7 +2,7 @@ class Game {
   static words = ['apple', 'banana', 'orange', 'pear'];
 
   constructor() {
-    this.word = Game.getRandomWord();
+    this.word = Game.getRandomWord().split('');
   }
 
   static getRandomWord() {
@@ -11,11 +11,15 @@ class Game {
     return Game.words.splice(wordIndex, 1)[0];
   }
 
+  getWord() {
+    return this.word;
+  }
+
   /* The game must select a random word from a predefined list of words
    *
    * The selected word should be stored as an array of letters
    *
-   * the current state of the word being guest should be known
+   * the current state of the word being guessed should be known
    *   for example: if we're guessing APPLE and we have guessed
    *   a, b, e, we should know that the 
    *   current state is a, _, _, _, e 
@@ -38,7 +42,8 @@ class Game {
 // lets confirm we can create an instance of a game
 //  we test this by verifying the variable that references it is not null
 
-console.log(Game.getRandomWord());
+let myGame = new Game();
+console.log(myGame.getWord());
 console.log(Game.getRandomWord());
 console.log(Game.getRandomWord());
 console.log(Game.getRandomWord());
