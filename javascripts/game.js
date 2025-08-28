@@ -11,10 +11,6 @@ class Game {
     return Game.words.splice(wordIndex, 1)[0];
   }
 
-  getWord() {
-    return this.word;
-  }
-
   /* The game must select a random word from a predefined list of words
    *
    * The selected word should be stored as an array of letters
@@ -43,9 +39,5 @@ class Game {
 //  we test this by verifying the variable that references it is not null
 
 let myGame = new Game();
-console.log(myGame.getWord());
-console.log(Game.getRandomWord());
-console.log(Game.getRandomWord());
-console.log(Game.getRandomWord());
-console.log(Game.getRandomWord());
+console.log(myGame.word);
 
